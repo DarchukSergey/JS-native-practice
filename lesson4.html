@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<!-- 1.Даны переменные a = 10 и b = 3. Найдите остаток от деления a на b -->
+<script type="text/javascript">
+	var a = 10;
+	var b = 3;
+	var res = a%b;
+	document.write(res);
+</script>
+
+<!-- 2. Даны переменные a и b. Проверьте, что a делится без остатка на b. Если это так - выведите 'Делится' и результат деления, иначе выведите 'Делится с остатком' и остаток от деления. -->
+<script type="text/javascript">
+	var a = 17;
+	var b = 3;
+	var res = a%b;
+	if (res == 0) {
+	document.write('Делится');
+	}else{
+	document.write('Делится c остатком ' + res);
+	}
+</script>
+
+<!-- 3. Возведите 2 в 10 степень. Результат запишите в переменную st. -->
+<script type="text/javascript">
+	var a = 2;
+	var st = Math.pow(a,10);
+	document.write(st);
+</script>
+
+<!-- 4. Найдите квадратный корень из 245. -->
+<script type="text/javascript">
+	var a = 245;
+	var st = Math.sqrt(a);
+	document.write(st);
+</script>
+
+<!-- 5. Дан массив с элементами 4, 2, 5, 19, 13, 0, 10. Найдите квадратный корень из суммы кубов его элементов. Для решения воспользуйтесь циклом for. -->
+<script type="text/javascript">
+	var zero = 0;
+	var arr = [4, 2, 5, 19, 13, 0, 10];
+	for (var i = 0; i < arr.length; i++) {
+	zero += Math.pow(arr[i],3);
+	}
+	document.write(Math.sqrt(zero));
+</script>
+
+<!-- 6.Найдите квадратный корень из 379. Результат округлите до целых, до десятых, до сотых. -->
+<script type="text/javascript">
+	var a = 379;
+	var b = Math.sqrt(a);
+	document.write(b.toFixed(0) + '<br>');
+	document.write(b.toFixed(1) + '<br>');
+	document.write(b.toFixed(2) + '<br>');
+</script>
+
+<!-- 7. Найдите квадратный корень из 587. Округлите результат в большую и меньшую стороны, запишите результаты округления в объект с ключами 'floor' и 'ceil' -->
+<script type="text/javascript">
+	var a = 587;
+	var b = Math.sqrt(a);
+	document.write(Math.floor(b) + '</br>');
+	document.write(Math.ceil(b));
+</script>
+
+<!-- 8. Даны числа 4, -2, 5, 19, -130, 0, 10. Найдите минимальное и максимальное число. -->
+<script type="text/javascript">
+	document.write(Math.max(4, -2, 5, 19, -130, 0, 10) + '<br>');
+	document.write(Math.min(4, -2, 5, 19, -130, 0, 10));
+</script>
+
+<!-- 9. Выведите на экран случайное целое число от 1 до 100 -->
+<script type="text/javascript">
+	var a = Math.random(1, 100) * 100;
+	document.write(Math.round(a));
+</script>
+
+<!-- 10. Даны переменные a и b. Найдите найдите модуль разности a и b. Проверьте работу скрипта самостоятельно для различных a и b -->
+<script type="text/javascript">
+	var a = 20;
+	var b = 17;
+	document.write(Math.abs(b - a));
+</script>
+
+<!-- 11. Даны переменные a и b. Отнимите от a переменную b и результат присвойте переменной c. Сделайте так, чтобы в любом случае в переменную c записалось положительное значение. Проверьте работу скрипта при a и b, равных соответственно 3 и 5, 6 и 1 -->
+<script type="text/javascript">
+	var a = 3;
+	var b = 5;
+	var c = Math.abs(a - b);
+	document.write(c);
+</script>
+
+<!-- 12. Дан массив arr. Найдите среднее арифметическое его элементов. Проверьте задачу на массиве с элементами 12, 15, 20, 25, 59, 79.. -->
+<script type="text/javascript">
+	var zero = 0;
+	var arr = [12, 15, 20, 25, 59, 79];
+	for (var i = 0; i < arr.length; i++) {
+	zero += arr[i];
+	}
+	document.write(zero / arr.length);
+</script>
+
+<!-- 13. Напишите скрипт, который будет находить факториал числа. Факториал (обозначается !) - это произведение (умножение) всех целых чисел, меньше данного, и его самого. Например, 4! = 1*2*3*4. -->
+<script type="text/javascript">
+	var fact = 4;
+	var zero = 1;
+	for (var i = 1; i <= fact; fact--) {
+	zero *=fact;
+	}
+	document.write(zero + '<br>');
+
+</script>
+
+<!-- 1. Дан массив с числами. Выведите на экран только четные числа из этого массива. -->
+<script type="text/javascript">
+	var arr = [2, 5, 7, 8, 12, 15, 56, 124];
+	for (var i = 0; i < arr.length; i++) {
+	if (arr[i] % 2 == 0) {
+	document.write(arr[i] + '<br>');
+	}
+	}
+</script>
+
+<!-- 2. Дан массив с числами. Найдите сумму квадратных корней этих чисел. Округлите полученную сумму до 3 знаков в дробной части. -->
+<script type="text/javascript">
+	var arr = [2, 5, 7, 3, 6, 5];
+	var sum = 0;
+	for (var i = 0; i < arr.length; i++) {
+	var pow = Math.sqrt(arr[i],2);
+	sum += pow;
+	}
+	document.write(sum.toFixed(3) + '<br>');
+</script>
+
+</body>
+</html>
