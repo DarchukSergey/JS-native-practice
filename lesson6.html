@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<!-- 1. Выведите на экран текущий день. -->
+<script type="text/javascript">
+	var date = new Date();
+	document.write('сегодня ' + date.getDate());
+</script>
+
+<!-- 2. Выведите на экран текущий месяц. -->
+<script type="text/javascript">
+	var date = new Date();
+	var month = [ 'Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'
+	];
+	for (var i = 0; i < month.length; i++) {
+	if (date.getMonth() == month[i]){
+
+	}
+	}
+	document.write('сегодня '+ date.getDate()+ ' ' + mounth[date.getMonth()]);
+</script>
+
+<!-- 3. Выведите на экран текущий год. -->
+<script type="text/javascript">
+	var date = new Date();
+	var month = [
+	'Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'
+	];
+	for (var i = 0; i < month.length; i++) {
+	if (date.getMonth() == month[i]){
+
+	}
+	}
+	document.write('сегодня '+ date.getDate()+ ' ' + month[date.getMonth()] + ' ' + date.getFullYear());
+</script>
+
+<!-- 4. Выведите на экран текущую дату-время в формате '12:59:59 31.12.2014'. -->
+<script type="text/javascript">
+	var date = new Date();
+	document.write(date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + ' ' + date.getDate()+ '.' + date.getMonth() + '.' + date.getFullYear());
+</script>
+
+<!-- 5.Выведите на экран номер текущего дня недели. -->
+<script type="text/javascript">
+	var date = new Date();
+	console.log(date.getDay());
+</script>
+
+<!-- 6.Выведите на экран текущий день недели (словом, по-русски). -->
+<script type="text/javascript">
+	var week = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ];
+	var date = new Date();
+	console.log(week[date.getDay()]);
+</script>
+
+<!-- 7 .Выведите на экран количество минут с 1-го января 1970 года до настоящего момента времени. -->
+<script type="text/javascript">
+	var date = new Date();
+	console.log(Math.floor(date.getTime()/1000/60));
+</script>
+
+<!-- 8. Создайте объект Date за 10 марта 2010 года. Выведите на экран день недели за эту дату. -->
+<script type="text/javascript">
+	var week = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб' ];
+	var date = new Date(2010, 10, 03);
+	console.log(week[date.getDay()]);
+</script>
+
+<!-- 9.Создайте объект Date за 15 июня текущего года. Выведите эту дату в формате 'день-месяц-год'. -->
+<script type="text/javascript">
+	var today = new Date();
+	var year = today.getFullYear();
+	var date = new Date(year,06,15);
+	console.log(date.getDate() + '-' + date.getMonth() + '-' + year);
+</script>
+
+<!-- 10.Создайте объект Date за 15 числа текущего месяца текущего года. 
+Выведите эту дату в формате 'день-месяц-год'.-->
+<script type="text/javascript">
+	var today = new Date();
+	var year = today.getFullYear();
+	var month = today.getMonth() + 1;
+	var date = new Date(year,month,15);
+	console.log(date.getDate() + '-' + month + '-' + year);
+</script>
+
+<!-- 11.Выведите на экран количество часов, прошедшее между 1 марта 1988 года и текущим моментом с помощью Date.parse. -->
+<script type="text/javascript">
+	var date = new Date();
+	var date1 = Date.parse('1988-03-01');
+	var hours = (date-date1)/1000/60/60;
+	console.log(Math.floor(hours));
+</script>
+
+<!-- 12. Создайте объект Date для 5 марта 2015 года, 12 часов, 59 минут, 59 секунд. Выведите на экран timestamp за эту дату. -->
+<script type="text/javascript">
+	var date = new Date(2015,03,05,12,59,59);
+	console.log(date.getTime());
+</script>
+
+<!-- 13. Найдите разницу в миллисекундах между 5 марта 2015 года, 12 часов, 59 минут, 59 секунд 
+и текущим моментом времени.-->
+<script type="text/javascript">
+	var date = new Date(2015,03,05,12,59,59);
+	var date1 = new Date();
+	console.log(date1 - date);
+</script>
+
+<!-- 14. Найдите разницу в миллисекундах между 
+5 марта 2015 года, 12 часов, 59 минут, 59 секунд и 10 августа 2017 года, полночь.-->
+	<script type="text/javascript">
+	var date = new Date(2015,3,5,12,59,59);
+	var date1 = new Date(2017,8,10,23,59,59,);
+	console.log(date1 - date);
+</script>
+
+<!-- 15.Выведите на экран timestamp за полночь сегодняшнего дня.
+Для этого вначале получите текущий год, месяц и день с помощью первого объекта
+Date, а затем создайте второй объект Date с этим годом, месяцем и днем и часами,
+минутами, секундами, соответствующими полуночи.-->
+<script type="text/javascript">
+	var date1 = new Date();
+	var date2 = new Date(date1.getFullYear(), date1.getMonth(),date1.getDate(), 0, 0, 0);
+	document.write(date2.getTime());
+</script>
+
+<!-- 16.Выведите на экран количество секунд с начала дня
+до настоящего момента времени. Скрипт должен корректно работать в любой день. -->
+<script type="text/javascript">
+	var date1 = new Date();
+	var date2 = new Date(date1.getFullYear(), date1.getMonth(),date1.getDate(), 0, 0, 0);
+	document.write(Math.floor((date1.getTime() - date2.getTime()) / 1000));
+</script>
+
+<!-- 17.Выведите на экран количество секунд, которое осталось до конца дня. -->
+<script type="text/javascript">
+	var date1 = new Date();
+	var date2 = new Date(date1.getFullYear(), date1.getMonth(),date1.getDate(), 23, 59, 59);
+	document.write(Math.floor((date2.getTime() - date1.getTime()) / 1000));
+</script>
+
+<!-- 6.1. Даны 3 переменные: день, месяц и год. В них хранятся какие-то значения, соответствующие определенной дате. Узнайте, какой день недели был или будет в эту дату. -->
+<script type="text/javascript">
+	var year = 2017;
+	var month = 5;
+	var date = 3;
+	var day = new Date(year,month,date);
+	document.write(day.getDay());
+</script>
+
+
+<!-- 6.2. Узнайте, какой день недели будет 31 декабря текущего года.
+Скрипт должен работать с любом году. -->
+<script type="text/javascript">
+	var day = new Date();
+	var date = new Date(day.getFullYear(),11,31);
+	document.write(date.getDay());
+</script>
+
+<!-- 6.3.Найдите разницу в миллисекундах между полночью 15 февраля 2016 года и текущим моментом времени. Переведите эту разницу в миллисекундах в дни, а затем в месяцы. -->
+<script type="text/javascript">
+	var date1 = new Date();
+	var date2 = new Date(2016,01,15,0,0,0);
+	var days = (date1 - date2)/1000/60/60/24;
+	var month = Math.floor(days/30);
+	document.write(days + ' дней' + '<br>' + month + ' месяцев');
+</script>
+
+<!-- 6.4. Узнайте, сколько дней осталось до нового года. Скрипт должен работать с любом году. -->
+<script type="text/javascript">
+	var date = new Date();
+	var newYear = new Date(date.getFullYear(),11,31);
+	document.write('до нового года осталось ' + Math.floor((newYear - date)/1000/60/60/24) + ' дней');
+</script>
+
+<!-- 6.5. Даны две переменные с датами, например, '2015-12-31' и '2017-10-15'. Найдите разницу в днях между этими двумя датами. -->
+<script type="text/javascript">
+	var date1 = '2015-12-31';
+	var date2 = '2017-10-15'
+	var res1 = Date.parse(date1);
+	var res2 = Date.parse(date2);
+	document.write((res2 - res1)/1000/60/60/24 + ' дней');
+</script>
+
+<!-- 6.6. Даны две переменные с датами, например, '31-12-2015' и '15-10-2017'. Найдите разницу в месяцах между этими двумя датами. -->
+<script type="text/javascript">
+	var date1 = '31-12-2015';
+	var date2 = '15-10-2017';
+	var revDate1 = date1.split('-').reverse().join('-');
+	var revDate2= date2.split('-').reverse().join('-');
+	var res1 = Date.parse(revDate1);
+	var res2 = Date.parse(revDate2);
+	document.write(Math.floor((res2 - res1)/1000/60/60/24/30) + ' месяцев');
+</script>
+
+</body>
+</html>
