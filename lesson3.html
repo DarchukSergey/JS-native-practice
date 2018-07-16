@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<!-- 1. Выведите столбец чисел от 1 до 100. Решите эту задачу сначала через цикл while, а затем через цикл for. -->
+<script type="text/javascript">
+	var i = 1;
+	while( i <= 100 ){
+	document.write(i + '</br>');
+	i++;
+	}
+
+	for (var i = 1; i <= 100; i++) {
+	document.write(i + '</br>');
+	}
+</script>
+
+<!-- 2. Выведите столбец четных чисел в промежутке от 0 до 100. Решите эту задачу сначала через цикл while, а затем через цикл for. -->
+<script type="text/javascript">
+	var i = 0;
+
+	while( i <=100 ){
+	document.write(i + '</br>');
+	i += 2;
+	}
+
+	for (var i = 0; i <= 100; i+=2) {
+	document.write(i + '</br>');
+	}
+</script>
+
+
+<!-- 3. С помощью цикла найдите сумму чисел от 1 до 100. Решите эту через цикл for. -->
+<script type="text/javascript">
+	var sum = 0;
+
+	for (var i = 1; i <= 100; i++) {
+	sum += i;
+	}
+	document.write(sum);
+</script>
+
+
+<!-- 4.Дан массив. С помощью цикла for выведите на экран все элементы этого массива. -->
+<script type="text/javascript">
+	var arr =[1,2,3,4,5,6,7];
+	for (var i = 0; i < arr.length; i++) {
+	document.write(arr[i]);
+	}
+</script>
+
+
+<!-- 5. Дан массив с числами. С помощью цикла for сумму элементов этого массива. -->
+<script type="text/javascript">
+	var sum = 0;
+	var arr =[1,2,3,4,5,6,7];
+	for (var i = 0; i < arr.length; i++) {
+	sum += arr[i];
+	}
+	document.write(sum);
+</script>
+
+
+<!-- 6. Дан объект obj. С помощью цикла for-in выведите на экран ключи и элементы этого объекта. -->
+<script type="text/javascript">
+	var obj = {green: 'зеленый', red: 'красный', blue: 'голубой'};
+
+	for (key in obj) {
+	document.write(obj[key] + ' - ' + key + '</br>' );
+	}
+</script>
+
+<!-- 7. Дан объект obj с ключами Коля, Вася, Петя с элементами '200', '300', '400'. С помощью цикла for-in выведите на экран строки такого формата: 'Коля - зарплата 200 долларов.'. -->
+<script type="text/javascript">
+	var obj = {Коля: '200', Вася: '300', Петя: '400'};
+
+	for (key in obj) {
+	document.write(key + ' зарплата ' + obj[key] + ' долларов' + '.' + '</br>' );
+	}
+</script>
+
+<!-- 8.Дан массив с элементами 2, 5, 9, 15, 0, 4. С помощью цикла for и оператора if выведите на экран столбец тех элементов массива, которые больше 3-х, но меньше 10. -->
+<script type="text/javascript">
+	var arr = [2, 5, 9, 15, 0, 4];
+
+	for (i = 0; i < arr.length; i++ ) {
+	if (arr[i] > 3 && arr[i] < 10){
+	document.write(arr[i] + '</br>');
+	}
+	}
+</script>
+
+
+<!-- 9. Дан массив с числами. Числа могут быть положительными и отрицательными. Найдите сумму положительных элементов этого массива. -->
+<script type="text/javascript">
+	sum = 0;
+
+	var arr = [2, 5, -9, 15, 0, -4];
+	for (i = 0; i < arr.length; i++ ) {
+	if (arr[i] > 0 ){
+	sum += arr[i];
+	}
+	}
+	document.write(sum + '</br>');
+
+</script>
+
+<!-- 10. Дан массив числами, например: ['10', '20', '30', '50', '235', '3000']. Выведите на экран только те числа из массива, которые начинаются на цифру 1, 2 или 5. -->
+<script type="text/javascript">
+	var arr = ['10', '20', '30', '50', '235', '3000'];
+
+	for (i = 0; i < arr.length; i++) {
+	if (arr[i][0] == '1' || arr[i][0] == '2' || arr[i][0] == '5'){
+	document.write( arr[i] + '</br>');
+	}
+	}
+
+</script>
+
+<!-- 11. Составьте массив дней недели. С помощью цикла for выведите все дни недели, а выходные дни выведите жирным. -->
+<script type="text/javascript">
+	 var arr = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+
+		for (var i = 0; i < arr.length; i++) {
+		if (i == 5 || i == 6) {
+		document.write('<b>' + arr[i] + '</b><br>');
+
+		}else
+		document.write(arr[i] + '<br>');
+		}
+</script>
+
+
+<!-- 12. Составьте массив дней недели. С помощью цикла for выведите все дни недели, а текущий день выведите курсивом. Текущий день должен храниться в переменной $day.  -->
+<script type="text/javascript">
+	var day = 2;
+	var arr = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+
+	for (var i = 0; i < arr.length; i++) {
+	if (i == day ) {
+	document.write('<i>' + arr[i] + '</i><br>');
+
+	}else
+	document.write(arr[i] + '<br>');
+	}
+</script>
+
+<!-- 3.1. Выведите столбец чисел от 11 до 33. Решите эту задачу сначала через цикл while, а затем через цикл for. -->
+<script type="text/javascript">
+	var i = 11;
+
+	while (i <= 33){
+	document.write(i + '<br>');
+	i++;
+	}
+	for (var i = 11; i <= 33; i++) {
+	document.write(i + '<br>');
+	}
+
+</script>
+
+<!-- 3.2. С помощью цикла найдите сумму четных чисел от 1 до 100. Решите эту через цикл for. -->
+<script type="text/javascript">
+	for (var i = 0; i <= 100; i+=2) {
+	document.write(i + '<br>');
+	}
+</script>
+
+
+<!-- 3.3.Дан массив с элементами 1, 2, 5, 9, 4, 13, 4, 10. С помощью цикла for и оператора if проверьте есть ли в массиве элемент со значением, равным 4. Если есть - выведите на экран 'Есть!' и выйдите из цикла. Если нет - ничего делать не надо. -->
+<script type="text/javascript">
+	var arr = [1, 2, 5, 9, 4, 13, 4, 10];
+	for (var i = 0; i < arr.length; i++) {
+	if (arr[i] == 4) {
+	document.write('Есть');
+	break;
+	}
+	}
+</script>
+
+<!-- 3.4 . Дан массив с элементами 1, 2, 3, 4, 5, 6, 7, 8, 9. С помощью цикла for создайте строку '-1-2-3-4-5-6-7-8-9-'. -->
+<script type="text/javascript">
+	var zer = ' ';
+	var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+	for (var i = 0; i < arr.length; i++) {
+	zer += '-' + arr[i];
+	}
+	document.write(zer + '-');
+</script>
+
+</body>
+</html>
