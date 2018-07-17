@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- 1.Дана строка. Сделайте заглавным первый символ каждого слова этой строки. Для этого сделайте вспомогательную функцию ucfirst, которая будет получать строку, делать первый символ этой строки заглавным и возвращать обратно строку с заглавной первой буквой. -->
+<script type="text/javascript">
+	var string = 'ура к нам приехал дед';
+	var newArr = [];
+	var splits = string.split(' ');
+
+	for (var i = 0; i < splits.length; i++) {
+		newArr.push(ucfirst(splits[i]));
+	}
+
+	var newStr = newArr.join(' ');
+
+	function ucfirst(str){
+		return str[0].toUpperCase() + str.substr(1);
+	}
+	document.write(newStr);
+</script>
+
+<!-- 2.Дана строка вида 'var_text_hello'. Сделайте из него текст 'varTextHello'. -->
+<script type="text/javascript">
+	var str = "var_text_hello";
+	var arr = str.split('_');
+	for (var i = 1; i < arr.length; i++) {
+		arr[i] = arr[i].slice(0, 1).toUpperCase() + arr[i].slice(1);
+	}
+		str = arr.join('');
+
+	document.write(str);
+</script>
+
+<!-- 3. Сделайте функцию isSimple, которая параметром будет принимать целое число и возвращать true, если число простое и false - если не простое. Простое число - это такое число, которое не делится ни на какое другое, кроме кроме себя самого и единицы. Например, число 31 - простое. То есть в нашем случае нужно проверить, что число 31 не делится на все числа от 2 до 30. -->
+<script type="text/javascript">
+	function isSimple(num){
+		for (var i = 2; i < num; i++) {
+			if( num % i == 0){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	console.log(isSimple(31));
+</script>
+
+<!-- 4. С помощью функцию isSimple из предыдущей задачи выведите на экран все простые числа из промежутка от 1 до 100. -->
+<script type="text/javascript">
+	for (var i = 5; i < 100; i++) {
+		if (!isSimple([i])){
+			document.write(i + '<br>');
+		}
+	}
+
+	function isSimple(num){
+		for (var i = 2; i < num; i++) {
+			if( num % i == 0){
+				return true;
+			}
+		}
+		return false;
+	}
+</script>
+<!-- 5.Сделайте функцию, которая возвращает множественное или единственное число
+существительного. Пример: 1 яблоко, 2 (3, 4) яблока, 5 яблок.
+Функция первым параметром принимает число, а следующие 3 параметра —
+форма для единственного числа, для чисел два, три,
+четыре и для чисел, больших четырех, например, func(3, 'яблоко', 'яблока', 'яблок'). -->
+<script type="text/javascript">
+	function getQuant(num, param1, param2, param3) {
+
+		if (num == 1){
+			return num + ' ' + param1;
+		}
+		if (num == 2 || num == 3 || num == 4) {
+			return num + ' ' + param2;
+		}
+		else{
+			return num + ' ' + param3;
+		}
+	}
+	document.write(getQuant(0, 'яблоко', 'яблока', 'яблок'));
+</script>
+
+<!-- 6.Сделайте функцию getDivisors, которая параметром принимает число и возвращает массив его делителей (чисел, на которое делится данное число). -->
+<script type="text/javascript">
+	function isSimple(num){
+		var arr = [];
+		for (var i = 1; i <= num; i++) {
+			if( num % i == 0){
+				arr.push(i);
+			}
+		}
+		return arr;
+		}
+
+	console.log(isSimple(30));
+</script>
+
+<!-- 6.Сделайте функцию getIntersect, которая параметром принимает два массива и возвращает массив элементов, которые есть в обоих массивах. -->
+<script type="text/javascript">
+	var arr1 = [5,2,12,25,22,33,11,10];
+	var arr2 = [4,5,13,25,20,2,77,1];
+
+
+	function getIntersect(arr1, arr2) {
+		return elementArray(arr1, arr2);
+	}
+
+	function elementArray(arr1, arr2) {
+		var arr = [];
+
+		for (var i = 0; i < arr1.length; i++) {
+			for (var j = 0; j < arr2.length; j++) {
+				if (arr1[i] === arr2[j]) {
+					arr.push(arr1[i]);
+				}
+			}
+		}
+
+		return arr;
+	}
+
+	console.log(getIntersect(arr1,arr2));
+</script>
+
+<!-- 10.1.Сделайте функцию detElem, которая параметром будет принимать массив и какое значение и
+возвращать массив, в котором все элементы с таким значением будут удалены. -->
+
+<script type="text/javascript">
+	function detElem(arr, elem) {
+		for (var i = 0; i < arr.length; i++){
+			if(arr[i] == elem){
+				arr.splice(i,1);
+			}
+		}
+		return arr
+	}
+
+	console.log(detElem([1,2,3,4,5,7,6,8,7], 7));
+</script>
+
+ <!--10.2.Сделайте функцию getDiff, которая параметром будет принимать два массива и возвращать массив элементов, которые не присутствуют одновременно в обоих массивах. -->
+<script type="text/javascript">
+	var arr1 = [5,2,12,25,22,33,11,10];
+	var arr2 = [4,5,13,25,20,2,77,1];
+
+		function getDiff(arr1, arr2) {
+			var arr = arr1.concat(arr2);
+			for (var i = 0; i < arr1.length; i++) {
+				for (var j = 0; j < arr2.length; j++) {
+					if (arr1[i] == arr2[j]) {
+						arr = elementArray(arr, arr1[i]);
+					}
+				}
+			}
+			return arr;
+		}
+
+		function elementArray(arr1, arr2) {
+			var newArr = [];
+			for (var i = 0; i < arr1.length; i++) {
+				if (arr1[i] !== arr2) {
+					newArr.push(arr1[i]);
+				}
+			}
+			return newArr;
+		}
+
+	console.log(getDiff(arr1,arr2));
+</script>
+
+<!-- 10.3.Сделайте функцию arrayRand, которая параметром будет принимать массив и возвращать случайный элемент из этого массива. -->
+<script type="text/javascript">
+	var arr = [3,5,7,10,2,89,12,4,22,55,32,33];
+	function arrayRand(argument) {
+
+		var i = (Math.floor(Math.random() * arr.length));
+		for (i; i <= arr.length; i++) {
+			return arr[i];
+		}
+	}
+
+	console.log(arrayRand(arr));
+</script>
+<!-- 10.4. Сделайте функцию uniq, которая будет оставлять в массиве только уникальные элементы (то есть будет удалять дубли). -->
+<script type="text/javascript">
+	var arr = [3,5,7,10,2,89,12,4,22,55,32,33,2];
+
+
+	function uniq(arr){
+		arr.forEach(function (elem, index) {
+		for (var i = 0; i < arr.length; i++){
+			if(elem == arr[i] && index != i){
+				arr.splice(i,1);
+			}
+		}
+		});
+		return arr;
+	}
+
+	console.log(uniq(arr));
+</script>
+
+<!-- 10.5. Сделайте функцию shuffle, которая параметром будет
+принимать массив и перемешивать его элементы в случайном порядке. -->
+	<script type="text/javascript">
+		var arr = [3,5,7,10,2,89,12,4,22,55,32,33,2];
+		function shuffle(arr) {
+			var res = [];
+			for (var i = 0; i < arr.length; i++) {
+				res.push(arr[Math.floor(Math.random() * arr.length)]);
+			}
+			return res
+		}
+
+	document.write(shuffle(arr));
+</script>
+
+</body>
+</html>
