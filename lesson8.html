@@ -11,7 +11,7 @@
 	function isPositive(argument) {
 		return argument > 0;
 	}
-	
+
 	document.write(isPositive(-1));
 </script>
 
@@ -167,170 +167,51 @@
 	}
 	document.write(getFriendSum(getDivideSum(220),284));
 </script>
-<!-- 8.1. Сделайте функцию isPositive, которая параметром принимает число,
-а возвращает true, если оно положительное и false, если отрицательное. -->
+<!-- 1.Сделайте функцию isEven() (even - это четный), которая параметром принимает целое
+число и проверяет четное оно или нет.
+Если четное - пусть функция возвращает true, если нечетное - false. -->
 <script type="text/javascript">
-	function isPositive(argument) {
-	return argument > 0;
+	function isEven(num){
+		return num % 2 == 0;
 	}
-	document.write(isPositive(-1));
 </script>
-<!-- 8.2.Дан массив с числами. Запишите в новый массив только положительные числа из этого массива. Для этого используйте вспомогательную функцию isPositive из предыдущей задачи. -->
-<script type="text/javascript">
-	var arr = [ 5, 7, -2, 3, -9, 4, -1];
-	var newArr = [];
-		for (var i = 0; i < arr.length; i++) {
-			if(isPositive(arr[i]) == true){
-				newArr.push(arr[i]);
-			}
-		}
 
-	function isPositive(argument) {
-		return argument > 0;
+<!-- 2.Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел. Для этого используйте вспомогательную функцию isEven из предыдущей задачи. -->
+<script type="text/javascript">
+	var arr = [2, 7, 9, 4, 5, 6];
+	var newArr = [];
+	for (var i = 0; i < arr.length; i++) {
+		if (isEven(arr[i])) {
+			newArr.push(arr[i]);
+		}
+	}
+
+	function isEven(num){
+		return num % 2 == 0;
 	}
 
 	console.log(newArr);
 </script>
 
-<!-- 3.Сделайте функцию getDigitsSum (digit - это цифра), которая параметром принимает целое число и возвращает сумму его цифр. -->
+<!-- 3. делайте функцию getLetters, которая первым параметром будет принимать строку, а возвращать массив ее букв. -->
 <script type="text/javascript">
-	function getDigitsSum(digit) {
-
-		var start = 0;
-		var arr = digit.toString().split('');
-			for (var i = 0; i < arr.length; i++) {
-				var transform = Number(arr[i]);
-				start+=transform;
-			}
-		return start;
+	function getLetters(value){
+		return value.split('');
 	}
 
-	document.write(getDigitsSum(2525));
+	console.log(getLetters('Сделайте функцию getLetters'));
 </script>
 
-<!-- 8.4.Найдите все года от 1 до 2018, сумма цифр которых равна 13. Для этого используйте вспомогательную функцию getDigitsSum из предыдущей задачи. -->
+<!-- 4.Сделайте функцию reverseString, которая параметром будет принимать строку и переворачивать ее. Для создания этой функции используйте функцию getLetters из предыдущей задачи и встроенный в JavaScript метод reverse для переворота массива. -->
 <script type="text/javascript">
-	var date = new Date();
-	var year = Number(date.getFullYear());
-	var arr = [];
-
-	for (var i = 1; i < year; i++) {
-		arr.push(i);
+	function reverseString(valrev){
+		return getLetters(valrev).reverse().join('');
 	}
 
-	for (var i = 0; i < arr.length; i++) {
-		if(getDigitalSum(arr[i]) == 13){
-			document.write(arr[i] + '<br>');
-		}
+	function getLetters(value){
+		return value.split('');
 	}
-
-	function getDigitalSum(num){
-		return getArrSum(String(num).split(''));
-	}
-
-	function getArrSum(arr){
-		var sum = 0;
-
-		for (var i = 0; i < arr.length; i++) {
-			sum += Number(arr[i]);
-		}
-		return sum;
-	}
-</script>
-
-<!-- 8.5. Сделайте функцию getSum, которая параметром принимает массив чисел, а возвращает их сумму. -->
-<script type="text/javascript">
-	var arr = [25,12,21,3];
-
-	function getSum(num) {
-		var zero = 0;
-		for (var i = 0; i < num.length; i++) {
-			zero+=num[i];
-		}
-		return zero;
-	}
-
-	document.write(getSum(arr));
-</script>
-
-<!-- 8.6.Сделайте функцию getDigits, которая первым параметром будет принимать число, а возвращать массив его цифр. -->
-<script type="text/javascript">
-	function getDigits(argument) {
-	var arr = [];
-	var res = String(argument).split('');
-		for (var i = 0; i < res.length; i++) {
-			var num = Number(res[i]);
-			arr.push(num);
-		}
-		return arr;
-	}
-
-	console.log(getDigits(2324));
-</script>
-
-<!-- 8.7.Используя функции getSum и getDigits сделайте функцию getDigitsSum,
-которая параметром принимает целое число и возвращает сумму его цифр. -->
-<script type="text/javascript">
-	function getDigitsSum(cell){
-
-		function getSum(num) {// параметром принимает массив чисел, а возвращает их сумму
-			var zero = 0;
-				for (var i = 0; i < num.length; i++) {
-					zero+=num[i];
-				}
-			return zero;
-		}
-
-		function getDigits(argument) {//параметром принимает число, а возвращает массив его цифр.
-			var arr = [];
-			var res = String(argument).split('');
-			for (var i = 0; i < res.length; i++) {
-				var num = Number(res[i]);
-				arr.push(num);
-			}
-		return arr;
-		}
-		return getSum(getDigits(cell));
-	}
-
-	document.write(getDigitsSum(5678));
-</script>
-
-<!--8.8.Сделайте функцию, которая параметрами будет принимать два числа и возвращать true,
-если они дружественные, и false - если нет. Для решения используйте созданные нами ранее функции.-->
-
-<script type="text/javascript">
-	function getFriendSum(number1,number2){
-		if(number1 == number2){
-			return true;
-		}else{
-			return false;
-		}
-	}
-
-	function getDivideSum(num){//параметром принимает число и возвращает сумму делителей
-		function getSum(num) {// параметром принимает массив чисел, а возвращает их сумму
-			var zero = 1;
-			for (var i = 0; i < num.length; i++) {
-				zero+=num[i];
-			}
-				return zero;
-		}
-
-			function getNumFull(num){ //параметром принимает число и возвращает его делители
-
-			var arr = [];
-			for (var i = 2; i < num; i++) {
-				if ( num % i == 0) {
-					arr.push(i)
-				}
-			}
-			return arr;
-		}
-
-		return(getSum(getNumFull(num)));
-	}
-	document.write(getFriendSum(getDivideSum(220),284));
+	document.write(reverseString('Сделайте функцию'));
 </script>
 
 </body>
